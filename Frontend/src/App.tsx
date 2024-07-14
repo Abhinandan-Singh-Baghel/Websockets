@@ -9,7 +9,8 @@ function App() {
     const socket = new WebSocket('ws://localhost:8080');
     socket.onopen = () => {
       console.log('Connection established');
-      socket.send('Hello Server!');
+      // socket.send('Hello Server!');
+      setSocket(socket);
     }
     socket.onmessage = (message) => {
       console.log('Message received:', message.data);
